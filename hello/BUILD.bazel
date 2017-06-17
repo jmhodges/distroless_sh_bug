@@ -11,7 +11,7 @@ go_binary(
 docker_build(
     name = "prod",
     base = "@base//image:image.tar",
-    cmd = "./hello",
+    entrypoint = "./hello",
     repository = "distroless_sh_bug",
     files = [
         ":hello",
