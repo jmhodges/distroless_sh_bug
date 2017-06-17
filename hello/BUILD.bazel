@@ -18,3 +18,14 @@ docker_build(
     ],
     ports = ["8080"],
 )
+
+docker_build(
+    name = "use_ext",
+    base = "@distroless//base:base",
+    cmd = "./hello",
+    repository = "distroless_sh_bug",
+    files = [
+        ":hello",
+    ],
+    ports = ["8080"],
+)
