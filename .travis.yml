@@ -1,4 +1,7 @@
+language: go
 sudo: required
+
+go_import_path: distroless_sh_bug
 
 services:
   - docker
@@ -17,6 +20,9 @@ before_install:
   - sudo add-apt-repository -y ppa:webupd8team/java
   - sudo apt-get update && sudo apt-get install -y oracle-java8-installer
   - sudo dpkg -i bazel_0.5.2-linux-x86_64.deb
+
+install:
+  - echo nope
 
 script:
   - bazel run --test_output=errors //hello:prod
