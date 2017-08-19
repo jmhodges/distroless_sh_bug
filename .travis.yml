@@ -1,0 +1,9 @@
+sudo: required
+
+services:
+  - docker
+
+
+script:
+  - bazel run --test_output=errors //hello:prod
+  - docker run -it --rm distroless_sh_bug/hello:prod

@@ -1,10 +1,22 @@
 package main
 
-import "net/http"
+import (
+	"database/sql"
+	"fmt"
+	"log"
+
+	_ "github.com/mattn/go-sqlite3"
+)
 
 func main() {
-	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		w.Write([]byte("hello"))
-	})
-	http.ListenAndServe(":8080", nil)
+	db, err := sql.Open("sqlite3", ":memory:")
+	if err != nil {
+		log.Fatalln("Open:", err)
+	}
+	_, err = db.Exec("create table foo (name text)")
+	if err != nil {
+		log.Fatalln("Exec:", err)
+	}
+	defer db.Close()
+	fmt.Println("Hello, World")
 }
