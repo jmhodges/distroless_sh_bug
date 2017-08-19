@@ -25,5 +25,5 @@ install:
   - echo nope
 
 script:
-  - bazel run --test_output=errors //hello:prod
+  - bazel run //hello:prod
   - docker run -it --rm distroless_sh_bug/hello:prod
