@@ -35,3 +35,9 @@ go_repository(
     commit = "6654e412c3c7eabb310d920cf73a2102dbf8c632",
     importpath = "github.com/mattn/go-sqlite3",
 )
+
+go_repository(
+    name = "org_golang_x_net",
+    commit = "3da985ce5951d99de868be4385f21ea6c2b22f24",
+    importpath = "golang.org/x/net",
+)
