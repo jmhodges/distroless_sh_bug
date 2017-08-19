@@ -5,6 +5,7 @@ load("@io_bazel_rules_docker//docker:docker.bzl", "docker_build")
 go_binary(
     name = "hello",
     visibility = ["//visibility:public"],
+    deps = ["@com_github_mattn_go_sqlite3//:go_default_library"],
     srcs = ["hello.go"],
 )
 
