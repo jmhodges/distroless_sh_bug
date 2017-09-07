@@ -26,5 +26,5 @@ install:
   - echo nope
 
 script:
-  - bazel --output_groups=race run //hello:prod
+  - bazel run --output_groups=race //hello:prod
   - docker run -it --rm bazel/hello:prod
