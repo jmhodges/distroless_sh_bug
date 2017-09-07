@@ -3,7 +3,7 @@ workspace(name = "distroless_sh_bug")
 git_repository(
     name = "io_bazel_rules_go",
     remote = "https://github.com/bazelbuild/rules_go.git",
-    commit = "65df68f4f64e9c59eb571290eb86bf07766393b6",
+    commit = "dc6f99ad91eeeba7e780a66776eb6f8215cb9bdc",
 )
 
 load("@io_bazel_rules_go//go:def.bzl", "go_repositories", "go_repository")
