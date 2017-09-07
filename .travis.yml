@@ -22,6 +22,6 @@ install:
   - echo nope
 
 script:
-  - bazel build --output_groups=race //hello:go_default_binary
+  - bazel build --output_groups=race //hello:hello
   - bazel run --output_groups=race //hello:prod
   - docker run -it --rm bazel/hello:prod
